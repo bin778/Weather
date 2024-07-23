@@ -5,17 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather App</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .bg-overlay {
+      background: rgba(0, 0, 0, 0.5);
+    }
+  </style>
 </head>
-<body class="bg-blue-100">
-  <div class="container mx-auto p-4">
-    <h1 class="text-4xl font-bold mb-6 text-center text-gray-800">Weather App</h1>
+<body class="h-screen bg-cover bg-center relative" style="background-image: url('../image/city/seoul.jpg');">
+  <div class="absolute inset-0 bg-overlay"></div>
+  <div class="relative z-10 container mx-auto p-4 text-white">
+    <h1 class="text-4xl font-bold mb-6 text-center">Weather App</h1>
 
-    <!-- City Selection -->
     <div class="mb-6 text-center">
-      <select name="city-select" id="city-select" class="p-2 border border-gray-300 rounded-lg">
+      <select name="city-select" id="city-select" class="p-2 border border-gray-300 rounded-lg text-black">
         <option value="seoul">서울</option>
         <option value="tokyo">도쿄</option>
-        <option value="newyork">뉴욕</option>
+        <option value="new york">뉴욕</option>
         <option value="paris">파리</option>
         <option value="moscow">모스크바</option>
         <option value="sydney">시드니</option>
@@ -23,10 +28,9 @@
       <button id="getWeatherBtn" class="bg-blue-500 text-white p-2 rounded-lg ml-2">Get Weather</button>
     </div>
 
-    <!-- Current Weather -->
-    <div id="current-weather" class="bg-white p-6 rounded-lg shadow-md mb-6">
-      <h3 class="text-xl font-bold mb-4">2024년 7월 22일 월요일</h3>
-      <div class="flex items-center">
+    <div id="current-weather" class="bg-white bg-opacity-75 p-6 rounded-lg shadow-md mb-6">
+      <h3 class="text-xl font-bold mb-4 text-black">2024년 7월 22일 월요일</h3>
+      <div class="flex items-center text-black">
         <div class="flex-1">
           <h4 class="text-2xl font-bold mb-2">서울</h4>
           <p class="text-xl mb-2">26°C</p>
@@ -34,19 +38,15 @@
           <p>습도: 90%</p>
           <p>풍속: 3m/s</p>
         </div>
-        <img src="/image/weather/umbrella-solid.svg" alt="Weather Icon" width="50px" class="ml-4"/>
+        <img src="../image/weather/umbrella-solid.svg" alt="Weather Icon" width="50px" class="ml-4"/>
       </div>
     </div>
 
-    <!-- Weekly Weather Forecast -->
-    <div id="weekly-weather" class="bg-white p-6 rounded-lg shadow-md">
-      <h3 class="text-xl font-bold mb-4">일주일간 날씨 예보</h3>
-      <div id="forecast" class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <!-- Forecast items will be dynamically inserted here -->
-      </div>
+    <div id="weekly-weather" class="bg-white bg-opacity-75 p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-bold mb-4 text-black">일주일간 날씨 예보</h3>
+      <div id="forecast" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
     </div>
   </div>
-
-  <script src="script.js"></script>
+  <script src="../dist/Weather.js" type="module" defer></script>
 </body>
 </html>
