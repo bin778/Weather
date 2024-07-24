@@ -8,8 +8,13 @@
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "rootDir": "./src",
+    "outDir": "./dist",
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"],
+  "ts-node": {
+    "esm": true
+  }
 }
