@@ -16,22 +16,30 @@ const options: Intl.DateTimeFormatOptions = {
 
 // 도시별 배경 이미지 매핑
 const cityBackgroundMap: { [key: string]: string } = {
-  "seoul": "../image/city/seoul.jpg",
-  "tokyo": "../image/city/tokyo.jpg",
-  "new york": "../image/city/newyork.jpg",
-  "paris": "../image/city/paris.jpg",
-  "moscow": "../image/city/moscow.jpg",
-  "sydney": "../image/city/sydney.jpg"
+  "seoul": "../image/seoul.jpg",
+  "tokyo": "../image/tokyo.jpg",
+  "dubai": "../image/dubai.jpg",
+  "jakarta": "../image/jakarta.jpg",
+  "los angeles": "../image/los_angeles.jpg",
+  "toronto": "../image/toronto.jpg",
+  "rome": "../image/rome.jpg",
+  "paris": "../image/paris.jpg",
+  "moscow": "../image/moscow.jpg",
+  "cape town": "../image/cape_town.jpg"
 };
 
 // 도시 이름을 한국어로 매핑
 const cityTranslationMap: { [key: string]: string } = {
   "Seoul": "서울",
   "Tokyo": "도쿄",
-  "New York": "뉴욕",
+  "Dubai": "두바이",
+  "Jakarta": "자카르타",
+  "Los Angeles": "로스앤젤레스",
+  "Toronto": "토론토",
+  "Rome": "로마",
   "Paris": "파리",
   "Moscow": "모스크바",
-  "Sydney": "시드니"
+  "Cape Town": "케이프타운"
 };
 
 async function getWeather(location: string) {
@@ -113,7 +121,7 @@ function displayWeatherForecast(data: any) {
 
   if (forecastDiv && body) {
     forecastDiv.innerHTML = `
-      <h3 class="text-base md:text-xl font-bold mb-4 text-black">일주일간 날씨 예보</h3>
+      <h3 class="text-base md:text-xl font-bold mb-4 text-black">5일간 날씨 예보</h3>
       <div class="forecast-grid flex flex-row space-x-4">
         ${dailyForecasts.map((forecast: any) => `
           <div class="forecast-item text-black text-xs md:text-base">
